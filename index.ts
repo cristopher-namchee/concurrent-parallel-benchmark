@@ -6,12 +6,16 @@ import { callOCRInParallel } from "./parallel";
 const app = express();
 
 app.get("/concurrent", async (_, res) => {
+  console.log("Getting request for concurrent execution");
+
   const result = await callOCRConcurrently();
 
   return res.status(200).json(result);
 });
 
 app.get("/parallel", async (_, res) => {
+  console.log("Getting request for parallel execution");
+
   const result = await callOCRInParallel();
 
   return res.status(200).json(result);
