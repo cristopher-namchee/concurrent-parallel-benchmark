@@ -8,6 +8,9 @@ dependencies:
   express:
     specifier: ^4.18.3
     version: 4.18.3
+  tinybench:
+    specifier: ^2.6.0
+    version: 2.6.0
   tinypool:
     specifier: ^0.8.2
     version: 0.8.2
@@ -785,6 +788,10 @@ packages:
   /statuses@2.0.1:
     resolution: {integrity: sha512-RwNA9Z/7PrK06rYLIzFMlaF+l73iwpzsqRIFgbMLbTcLD6cOao82TaWefPXQvB2fOC4AjuYSEndS7N/mTCbkdQ==}
     engines: {node: '>= 0.8'}
+    dev: false
+
+  /tinybench@2.6.0:
+    resolution: {integrity: sha512-N8hW3PG/3aOoZAN5V/NSAEDz0ZixDSSt5b/a05iqtpgfLWMSVuCo7w0k2vVvEjdrIoeGqZzweX2WlyioNIHchA==}
     dev: false
 
   /tinypool@0.8.2:

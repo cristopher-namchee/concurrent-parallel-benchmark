@@ -1,26 +1,20 @@
-import express from "express";
+import { Bench } from "tinybench";
 
 import { callOCRConcurrently } from "./concurrent";
 import { callOCRInParallel } from "./parallel";
 
-const app = express();
+(async () => {
+  const bench = new Bench();
+  bench
+    .add("Concurrent", async () => {
+      await callOCRConcurrently();
+    })
+    .add("Parallel", async () => {
+      await callOCRInParallel();
+    });
 
-app.get("/concurrent", async (_, res) => {
-  console.log("Getting request for concurrent execution");
+  await bench.warmup();
+  await bench.run();
 
-  const result = await callOCRConcurrently();
-
-  return res.status(200).json(result);
-});
-
-app.get("/parallel", async (_, res) => {
-  console.log("Getting request for parallel execution");
-
-  const result = await callOCRInParallel();
-
-  return res.status(200).json(result);
-});
-
-app.listen(6969, () => {
-  console.log("Test server is up in 6969");
-});
+  console.table(bench.table());
+})();

@@ -37,27 +37,20 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var const_1 = require("./const");
+var delay = function (t) { return new Promise(function (resolve) { return setTimeout(resolve, t); }); };
 exports.default = (function (idx) { return __awaiter(void 0, void 0, void 0, function () {
-    var ocrResult, body, uploadResult;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0:
-                console.log("Calling OCR-".concat(typeof idx === "object" ? idx["idx"] : idx));
-                return [4 /*yield*/, fetch("https://40ba5d67-25ee-40f8-9027-4d064f218821.mock.pstmn.io", {
-                        method: "POST",
-                        body: new FormData(),
-                    })];
+            case 0: 
+            // Let's say that OCR receipt took 3s
+            // await delay(3000);
+            // and saving the result to S3 took 200ms
+            return [4 /*yield*/, delay(200)];
             case 1:
-                ocrResult = _a.sent();
-                return [4 /*yield*/, ocrResult.json()];
-            case 2:
-                body = _a.sent();
-                return [4 /*yield*/, fetch("https://40ba5d67-25ee-40f8-9027-4d064f218821.mock.pstmn.io/upload", {
-                        method: "POST",
-                        body: new FormData(),
-                    })];
-            case 3:
-                uploadResult = _a.sent();
+                // Let's say that OCR receipt took 3s
+                // await delay(3000);
+                // and saving the result to S3 took 200ms
+                _a.sent();
                 return [2 /*return*/, const_1.MOCK_RESULT];
         }
     });
