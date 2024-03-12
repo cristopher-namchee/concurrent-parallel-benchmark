@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MOCK_RESULT = exports.LIMIT = void 0;
-exports.LIMIT = 15;
+exports.MOCK_RESULT = exports.PAGES = void 0;
+exports.PAGES = 15;
 exports.MOCK_RESULT = {
     status: "SUCCESS",
     reason: "File Successfully Read",

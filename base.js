@@ -42,15 +42,13 @@ exports.default = (function (idx) { return __awaiter(void 0, void 0, void 0, fun
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: 
-            // Let's say that OCR receipt took 3s
-            // await delay(3000);
-            // and saving the result to S3 took 200ms
-            return [4 /*yield*/, delay(200)];
+            // Let's say that OCR receipt took 1s
+            return [4 /*yield*/, delay(1000)];
             case 1:
-                // Let's say that OCR receipt took 3s
-                // await delay(3000);
-                // and saving the result to S3 took 200ms
+                // Let's say that OCR receipt took 1s
                 _a.sent();
+                // and saving the result to S3 took 200ms
+                // await delay(200);
                 return [2 /*return*/, const_1.MOCK_RESULT];
         }
     });

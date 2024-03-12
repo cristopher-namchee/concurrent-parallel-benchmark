@@ -1,4 +1,4 @@
-export const LIMIT = 15;
+export const PAGES = 15;
 
 export const MOCK_RESULT = {
   status: "SUCCESS",

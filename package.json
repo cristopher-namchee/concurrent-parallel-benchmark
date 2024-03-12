@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "bench": "tsx index.ts"
+    "build": "tsc base.ts",
+    "start": "tsx index.ts",
+    "bench": "wrk -t4 -c10 -d30 -R10 http://localhost:1234/parallel && wrk -t4 -c10 -d30 -R10 http://localhost:1234/concurrent && wrk -t4 -c10 -d30 -R10 http://localhost:1234/sequential"
   },
   "keywords": [],
   "author": "",
